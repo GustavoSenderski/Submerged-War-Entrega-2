@@ -1,0 +1,87 @@
+[gd_scene format=3 uid="uid://j7jjornh1a13"]
+
+[ext_resource type="Script" uid="uid://reo5ukqdna3f" path="res://scripts/main_menu.gd" id="1_tt5f1"]
+[ext_resource type="Texture2D" uid="uid://b2hmm5dwtoni8" path="res://assets/Imagens/MainMenuBackground.png" id="2_853f1"]
+
+[node name="MainMenu" type="Control" unique_id=1691146252]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_tt5f1")
+
+[node name="MenuBackground" type="TextureRect" parent="." unique_id=409601715]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -9.999999
+offset_right = 578.0
+offset_bottom = 312.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.679999, 0.6800002)
+texture = ExtResource("2_853f1")
+
+[node name="Background" type="ColorRect" parent="." unique_id=2089964331]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.011764706, 0.08235294, 0.12941177, 1)
+
+[node name="TitleContainer" type="VBoxContainer" parent="." unique_id=801238143]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -271.5
+offset_top = -184.0
+offset_right = 271.5
+offset_bottom = -62.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Title" type="Label" parent="TitleContainer" unique_id=684919456]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+theme_override_font_sizes/font_size = 50
+text = "SUBMERGED WAR"
+
+[node name="Subtitle" type="Label" parent="TitleContainer" unique_id=1345773091]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+theme_override_font_sizes/font_size = 35
+text = "STEALTH • STRATEGY • SURVIVAL"
+
+[node name="MenuContainer" type="VBoxContainer" parent="." unique_id=1777860215]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -20.0
+offset_top = -150.0
+offset_right = 20.0
+offset_bottom = -110.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="PlayButton" type="Button" parent="MenuContainer" unique_id=430255536]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "JOGAR"
+
+[node name="ExitButton" type="Button" parent="MenuContainer" unique_id=1607163690]
+layout_mode = 2
+text = "SAIR"

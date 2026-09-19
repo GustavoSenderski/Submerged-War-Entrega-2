@@ -1,0 +1,40 @@
+[gd_scene format=3 uid="uid://bxtjjkodqkoie"]
+
+[ext_resource type="Script" uid="uid://cucx2ms0xxe5f" path="res://scripts/enemy_submarine_torpedo.gd" id="1_d03vo"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_d6k8d"]
+albedo_color = Color(0.6431373, 0.015686275, 0, 1)
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_yhw7n"]
+material = SubResource("StandardMaterial3D_d6k8d")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hwimo"]
+albedo_color = Color(0.98039216, 0.98039216, 0.4745098, 1)
+metallic = 1.0
+metallic_specular = 1.0
+
+[sub_resource type="BoxMesh" id="BoxMesh_yhw7n"]
+material = SubResource("StandardMaterial3D_hwimo")
+
+[node name="EnemyTorpedo" type="Node3D" unique_id=1243140230]
+script = ExtResource("1_d03vo")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=261434186]
+transform = Transform3D(-1.7484556e-08, -0.4, 0, 0.4, -1.7484556e-08, 0, 0, 0, 0.4, 0, 0, 0)
+mesh = SubResource("CapsuleMesh_yhw7n")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="." unique_id=1531965406]
+transform = Transform3D(0.02876687, 0, 0, 0, 1, 0, 0, 0, 0.09749055, -0.26164824, 0, 0)
+mesh = SubResource("BoxMesh_yhw7n")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="." unique_id=673101214]
+transform = Transform3D(0.02876687, 0, 0, 0, -4.3711392e-08, -0.09749055, 0, 1.0000001, -4.261447e-09, -0.26164824, 0, 0)
+mesh = SubResource("BoxMesh_yhw7n")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="." unique_id=1159042032]
+transform = Transform3D(0.02876687, 0, 0, 0, 0.6767136, -0.07177706, 0, 0.7362464, 0.06597318, -0.26164824, 0, 0)
+mesh = SubResource("BoxMesh_yhw7n")
+
+[node name="MeshInstance3D5" type="MeshInstance3D" parent="." unique_id=217407359]
+transform = Transform3D(0.02876687, 0, 0, 0, 0.66413057, 0.07288556, 0, -0.74761677, 0.06474646, -0.26164824, 0, 0)
+mesh = SubResource("BoxMesh_yhw7n")

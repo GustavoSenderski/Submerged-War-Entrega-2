@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://cje67n53t2p76"]
+
+[ext_resource type="Script" uid="uid://m7qeyvlq7l5p" path="res://scripts/torpedo.gd" id="1_0pm0o"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_oiu7p"]
+albedo_color = Color(0.019607844, 0, 0.019607844, 1)
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_yhw7n"]
+material = SubResource("StandardMaterial3D_oiu7p")
+radius = 0.15
+height = 0.8
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_hwimo"]
+radius = 0.15
+height = 0.8
+
+[node name="Torpedo" type="Area3D" unique_id=355410056]
+script = ExtResource("1_0pm0o")
+speed = 30.0
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1784837849]
+mesh = SubResource("CapsuleMesh_yhw7n")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=21987058]
+shape = SubResource("CapsuleShape3D_hwimo")

@@ -1,0 +1,62 @@
+[gd_scene format=3 uid="uid://dv4rykqv4yusf"]
+
+[ext_resource type="Script" uid="uid://dp0284ku4qb8o" path="res://scripts/enemy_submarine.gd" id="1_bvy0p"]
+[ext_resource type="PackedScene" uid="uid://bxtjjkodqkoie" path="res://Scenes/EnemySubmarineTorpedo.tscn" id="2_sihoc"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_e6o36"]
+albedo_color = Color(0.06606022, 0.010879177, 0.0036237568, 1)
+metallic = 0.25
+roughness = 0.35
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_hwimo"]
+material = SubResource("StandardMaterial3D_e6o36")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_smn72"]
+albedo_color = Color(0.8156863, 0.98039216, 0.05490196, 1)
+albedo_texture_force_srgb = true
+metallic = 0.25
+roughness = 0.35
+
+[sub_resource type="BoxMesh" id="BoxMesh_yhw7n"]
+material = SubResource("StandardMaterial3D_smn72")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hhkvh"]
+albedo_color = Color(0.8768593, 0.8691699, 0.10913173, 1)
+metallic = 0.25
+roughness = 0.35
+
+[sub_resource type="BoxMesh" id="BoxMesh_hwimo"]
+material = SubResource("StandardMaterial3D_hhkvh")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_hwimo"]
+size = Vector3(2.5, 0.6622925, 1)
+
+[node name="EnemySubmarine" type="CharacterBody3D" unique_id=173555416 groups=["enemy_submarine", "objective_blocker"]]
+collision_layer = 0
+collision_mask = 0
+motion_mode = 1
+script = ExtResource("1_bvy0p")
+test_spawn_near_player = false
+torpedo_scene = ExtResource("2_sihoc")
+
+[node name="Body" type="MeshInstance3D" parent="." unique_id=861372359]
+transform = Transform3D(3.6935846e-10, 0.004875135, 3.0043492, 1, -2.5219238e-08, -1.0673974e-14, 4.370983e-08, 0.5769284, -0.02538722, 0, 0, 0)
+layers = 3
+mesh = SubResource("CapsuleMesh_hwimo")
+
+[node name="ConningTower" type="MeshInstance3D" parent="." unique_id=832135599]
+transform = Transform3D(0.45, 0, 0, 0, 0.35, 0, 0, 0, 0.39533824, 0, 0.61779267, -0.009529516)
+layers = 3
+mesh = SubResource("BoxMesh_yhw7n")
+
+[node name="Tail" type="MeshInstance3D" parent="." unique_id=639627048]
+transform = Transform3D(-6.5567085e-09, -0.8, 2.1855692e-08, 0, -3.4969112e-08, -0.49999997, 0.15, -3.4969112e-08, 9.553426e-16, -1.4203222, 0, 0)
+layers = 3
+mesh = SubResource("BoxMesh_hwimo")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1941416467]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.03277588, 0.04204029, -0.0040642023)
+shape = SubResource("BoxShape3D_hwimo")
+
+[node name="TorpedoSpawn" type="Marker3D" parent="." unique_id=566672290 groups=["objective_blocker"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5041767, 0, 0)

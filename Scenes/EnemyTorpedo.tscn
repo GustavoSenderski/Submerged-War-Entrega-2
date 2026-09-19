@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://b2sly35fajftk"]
+
+[ext_resource type="Script" uid="uid://wwf8q2mb3klg" path="res://scripts/enemy_torpedo.gd" id="1_ra0oj"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_d6k8d"]
+albedo_color = Color(1, 0.972549, 0, 1)
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_yhw7n"]
+material = SubResource("StandardMaterial3D_d6k8d")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hwimo"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_yhw7n"]
+material = SubResource("StandardMaterial3D_hwimo")
+
+[node name="EnemyTorpedo" type="Node3D" unique_id=1243140230]
+script = ExtResource("1_ra0oj")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=261434186]
+transform = Transform3D(-1.7484556e-08, -0.4, 0, 0.4, -1.7484556e-08, 0, 0, 0, 0.4, 0, 0, 0)
+mesh = SubResource("CapsuleMesh_yhw7n")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="." unique_id=1531965406]
+transform = Transform3D(0.02876687, 0, 0, 0, 1, 0, 0, 0, 0.09749055, -0.26164824, 0, 0)
+mesh = SubResource("BoxMesh_yhw7n")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="." unique_id=673101214]
+transform = Transform3D(0.02876687, 0, 0, 0, -4.3711392e-08, -0.09749055, 0, 1.0000001, -4.261447e-09, -0.26164824, 0, 0)
+mesh = SubResource("BoxMesh_yhw7n")

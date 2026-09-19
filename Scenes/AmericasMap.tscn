@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://dwd6e4t43iu5m"]
+
+[ext_resource type="Texture2D" uid="uid://cfqx6d48icii1" path="res://assets/maps/MapaAmericas.png" id="1_si4ro"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wwqiq"]
+transparency = 1
+disable_fog = true
+albedo_texture = ExtResource("1_si4ro")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_hhdyw"]
+material = SubResource("StandardMaterial3D_wwqiq")
+size = Vector2(750, 900)
+
+[node name="AmericasMap" type="Node3D" unique_id=1868740163]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1314703497]
+transform = Transform3D(1.2623765, 0, 0, 0, 1, 0, 0, 0, 1, -2.3051758, -9.8, 0)
+layers = 2
+mesh = SubResource("PlaneMesh_hhdyw")

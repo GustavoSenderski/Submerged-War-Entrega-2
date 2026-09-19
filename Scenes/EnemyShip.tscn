@@ -1,0 +1,90 @@
+[gd_scene format=3 uid="uid://rhj0r5llex5w"]
+
+[ext_resource type="Script" uid="uid://bmugfessvik22" path="res://scripts/enemy_ship.gd" id="1_e7kd2"]
+[ext_resource type="PackedScene" uid="uid://idg0isdyv3xn" path="res://Scenes/TimedMine.tscn" id="2_4rvt8"]
+[ext_resource type="PackedScene" uid="uid://b2sly35fajftk" path="res://Scenes/EnemyTorpedo.tscn" id="3_0o2h3"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_q4c3s"]
+albedo_color = Color(0.12447148, 0.12447148, 0.12447148, 1)
+
+[sub_resource type="PrismMesh" id="PrismMesh_wwqiq"]
+material = SubResource("StandardMaterial3D_q4c3s")
+size = Vector3(1.8, 0.8, 5)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jtgl7"]
+albedo_color = Color(0.10671847, 0.187548, 0.32781097, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_hwimo"]
+material = SubResource("StandardMaterial3D_jtgl7")
+size = Vector3(1.8, 1, 1.2)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dk7nl"]
+albedo_color = Color(1, 0.03529412, 0.05490196, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_hhdyw"]
+material = SubResource("StandardMaterial3D_dk7nl")
+size = Vector3(1, 0.4, 1.5)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_yhw7n"]
+height = 1.7875977
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pr52l"]
+albedo_color = Color(1, 1, 0, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_wwqiq"]
+material = SubResource("StandardMaterial3D_pr52l")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_5ce0g"]
+size = Vector3(5, 1, 1.8)
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_4rvt8"]
+radius = 25.0
+
+[node name="EnemyShip" type="CharacterBody3D" unique_id=42040712 groups=["enemy_ship", "objective_blocker"]]
+collision_layer = 0
+collision_mask = 2
+script = ExtResource("1_e7kd2")
+mine_attack_distance = 4.0
+enemy_mine_scene = ExtResource("2_4rvt8")
+enemy_torpedo_scene = ExtResource("3_0o2h3")
+
+[node name="Visual" type="Node3D" parent="." unique_id=780562322]
+
+[node name="Hull" type="MeshInstance3D" parent="Visual" unique_id=2075232113]
+transform = Transform3D(4.3711385e-08, -3.8213705e-15, 1, -8.742277e-08, -0.99999994, 0, 0.99999994, -8.742277e-08, -4.371139e-08, -0.030827284, 0.097275615, 0)
+layers = 3
+mesh = SubResource("PrismMesh_wwqiq")
+
+[node name="Cabin" type="MeshInstance3D" parent="Visual" unique_id=124717491]
+transform = Transform3D(1, 4.235165e-22, 0, 0, 0.99999994, 0, -3.5527137e-15, -1.8512495e-29, 0.99999994, -1.3523207, 0.9041036, 0)
+layers = 3
+mesh = SubResource("BoxMesh_hwimo")
+
+[node name="Bow" type="MeshInstance3D" parent="Visual" unique_id=274903097]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.7096364, 0.66850746, 0)
+layers = 3
+mesh = SubResource("BoxMesh_hhdyw")
+
+[node name="Mast" type="MeshInstance3D" parent="Visual" unique_id=705003748]
+transform = Transform3D(0.13870707, 0, 0, 0, 0.5459555, 0, 0, 0, 0.10070216, -2.0742548, 1.6736851, 1.4210855e-14)
+layers = 3
+mesh = SubResource("CylinderMesh_yhw7n")
+
+[node name="Flag" type="MeshInstance3D" parent="Visual" unique_id=1350461912]
+transform = Transform3D(0.43814343, 0, 0, 0, 0.49072862, 0, 0, 0, 0.054404274, -2.3078191, 1.8911827, 0)
+layers = 3
+mesh = SubResource("BoxMesh_wwqiq")
+
+[node name="MineSpawn" type="Marker3D" parent="." unique_id=1882171946]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.3262658, 0)
+
+[node name="TorpedoSpawn" type="Marker3D" parent="." unique_id=277094760]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1660234364]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.209, 0)
+shape = SubResource("BoxShape3D_5ce0g")
+
+[node name="EnemyDetection" type="Area3D" parent="." unique_id=1418142065]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="EnemyDetection" unique_id=1409259012]
+shape = SubResource("SphereShape3D_4rvt8")

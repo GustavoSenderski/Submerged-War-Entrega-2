@@ -1,0 +1,60 @@
+[gd_scene format=3 uid="uid://off004dsm7fd"]
+
+[ext_resource type="Script" uid="uid://bjhp8grrmbn1" path="res://scripts/enemy_mine.gd" id="1_yxwpd"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hhdyw"]
+albedo_color = Color(0.57254905, 0.023529412, 0.09803922, 1)
+
+[sub_resource type="SphereMesh" id="SphereMesh_yhw7n"]
+material = SubResource("StandardMaterial3D_hhdyw")
+radius = 1.0
+height = 2.0
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_hwimo"]
+radius = 1.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_yxwpd"]
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_hwimo"]
+material = SubResource("StandardMaterial3D_yxwpd")
+
+[node name="EnemyMine" type="CharacterBody3D" unique_id=1596520694 groups=["objective_blocker"]]
+script = ExtResource("1_yxwpd")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=611129868]
+mesh = SubResource("SphereMesh_yhw7n")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=665235379]
+shape = SubResource("SphereShape3D_hwimo")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="." unique_id=1517490587]
+transform = Transform3D(0.35819128, 0, 0, 0, 1.2182127, 0, 0, 0, 0.31705073, -0.0358243, 0, 0)
+mesh = SubResource("CylinderMesh_hwimo")
+
+[node name="MeshInstance3D5" type="MeshInstance3D" parent="." unique_id=1513926216]
+transform = Transform3D(0.25327948, 0.86140645, 0, -0.25327948, 0.86140645, 0, 0, 0, 0.31705073, -0.0358243, 0, 0)
+mesh = SubResource("CylinderMesh_hwimo")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="." unique_id=1999198651]
+transform = Transform3D(0.25327948, -0.86140645, 0, 0.25327948, 0.86140645, 0, 0, 0, 0.31705073, -0.0358243, 0, 0)
+mesh = SubResource("CylinderMesh_hwimo")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="." unique_id=1519469631]
+transform = Transform3D(-1.565704e-08, -1.2182127, 0, 0.3581913, -5.324977e-08, 0, 0, 0, 0.31705073, -0.0358243, 0, 0)
+mesh = SubResource("CylinderMesh_hwimo")
+
+[node name="MeshInstance3D6" type="MeshInstance3D" parent="." unique_id=1966226585]
+transform = Transform3D(-0.0050011445, 0, 0.31701985, 0, 1.2182128, 0, -0.3581564, 0, -0.0044267313, -0.0358243, 0, 0)
+mesh = SubResource("CylinderMesh_hwimo")
+
+[node name="MeshInstance3D7" type="MeshInstance3D" parent="." unique_id=1123145374]
+transform = Transform3D(-0.0035363731, -0.012027041, 0.31701982, -0.25327942, 0.8614067, -3.6878493e-08, -0.25325486, -0.8613223, -0.004426731, -0.0358243, 0, 0)
+mesh = SubResource("CylinderMesh_hwimo")
+
+[node name="MeshInstance3D8" type="MeshInstance3D" parent="." unique_id=1504508882]
+transform = Transform3D(-0.0035363731, 0.012027041, 0.31701982, 0.25327942, 0.8614067, 3.6878493e-08, -0.25325486, 0.8613223, -0.004426731, -0.0358243, 0, 0)
+mesh = SubResource("CylinderMesh_hwimo")
+
+[node name="MeshInstance3D9" type="MeshInstance3D" parent="." unique_id=1355365010]
+transform = Transform3D(2.186058e-10, 0.017008951, 0.3170198, 0.35819125, -5.324977e-08, 1.004637e-15, 1.565551e-08, 1.218094, -0.0044267303, -0.0358243, 0, 0)
+mesh = SubResource("CylinderMesh_hwimo")

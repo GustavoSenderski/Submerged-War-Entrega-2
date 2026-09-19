@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://idg0isdyv3xn"]
+
+[ext_resource type="Script" uid="uid://dmoqnjxtm0y8d" path="res://scripts/timed_mine.gd" id="1_g55rs"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hhdyw"]
+albedo_color = Color(0.9647059, 0.24313726, 0.08627451, 1)
+
+[sub_resource type="SphereMesh" id="SphereMesh_yhw7n"]
+material = SubResource("StandardMaterial3D_hhdyw")
+radius = 0.35
+height = 0.7
+
+[node name="TimedMine" type="Node3D" unique_id=362553410]
+script = ExtResource("1_g55rs")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=253569785]
+mesh = SubResource("SphereMesh_yhw7n")
