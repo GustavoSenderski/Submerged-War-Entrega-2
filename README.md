@@ -50,7 +50,7 @@ A cena inicial apresenta o menu principal com as opções **JOGAR** e
 A versão executável para Windows é disponibilizada separadamente do
 código-fonte.
 
-**Arquivo da build:** `Submerged_War_Protótipo_Alpha_Técnico.exe`
+**Arquivo da build:** [Submerged War — Baixar executável para Windows](https://github.com/GustavoSenderski/Submerged-War-Entrega-2/releases/tag/v0.2-alpha)
 
 Para executar a versão compilada, basta abrir o arquivo `.exe`. Não é
 necessária a instalação do Godot.
