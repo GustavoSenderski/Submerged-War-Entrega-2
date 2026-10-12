@@ -133,6 +133,11 @@ Principais evoluções:
 Durante o desenvolvimento, algumas decisões foram ajustadas para manter
 o escopo adequado ao Alpha e priorizar estabilidade, integração e
 funcionamento dos sistemas principais.
+## Evolução do Protótipo
+
+A imagem abaixo apresenta a evolução do planejamento da Entrega 1 para o Alpha funcional da Entrega 2.
+
+![Evolução do Submerged War](Evolução%20Projeto%20_V@.png)
 
 ## 8. Organização do projeto
 
