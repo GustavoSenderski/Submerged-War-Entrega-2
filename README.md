@@ -137,7 +137,7 @@ funcionamento dos sistemas principais.
 
 A imagem abaixo apresenta a evolução do planejamento da Entrega 1 para o Alpha funcional da Entrega 2.
 
-![Evolução do Submerged War](Evolução%20Projeto%20_V@.png)
+![Evolução do Submerged War](Evolu%C3%A7%C3%A3o%20Projeto%20_%20V%40.png)
 
 ## 8. Organização do projeto
 
